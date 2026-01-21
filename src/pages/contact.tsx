@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <>
-      <h1>Contact</h1>
+      <h1 className="min-h-screen bg-foreground">Contact</h1>
     </>
   );
 };

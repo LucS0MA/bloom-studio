@@ -1,7 +1,7 @@
 const Classes = () => {
   return (
     <>
-      <h1>Classes</h1>
+      <h1 className="min-h-screen bg-foreground">Classes</h1>
     </>
   );
 };

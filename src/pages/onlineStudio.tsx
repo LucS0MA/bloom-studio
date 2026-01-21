@@ -1,7 +1,7 @@
 const OnlineStudio = () => {
   return (
     <>
-      <h1>Online Studio</h1>
+      <h1 className="min-h-screen bg-foreground">Online Studio</h1>
     </>
   );
 };
