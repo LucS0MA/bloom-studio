@@ -174,9 +174,9 @@ const Home = () => {
         </div>
       </section>
       <section className="section-padding">
-        <div className="studio-container flex flex-col gap-8 justify-center items-center text-center">
-        <h2 className="text-title">Ready to begin your journey?</h2>
-        <p className="text-body text-muted-foreground-dd">
+        <div className="studio-container flex flex-col gap-8 justify-center items-center text-center ">
+        <h2 className="text-h2 uppercase">Ready to begin your journey?</h2>
+        <p className="max-w-6/12 text-body text-muted-foreground-dd">
           Whether you're new to Pilates or looking to deepen your practice,
           we're here to guide you every step of the way.
         </p>

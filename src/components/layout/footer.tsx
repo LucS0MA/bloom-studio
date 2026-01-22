@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="text-foreground">
       <div className="studio-container py-16">
-        <div className="grid grid-cols-1 mb:grid-cols-4 lg:grid-cols-4 justify-center md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-center md:gap-12 mb-8">
           <div className="mb-4 md:col-span-2 max-w-110">
             <h2 className="text-title uppercase mb-4">bloom studio</h2>
             <p className="text-body text-muted-foreground-d">
@@ -49,6 +49,10 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="flex justify-between flex-col md:flex-row border-t-2 py-8">
+          <div className="uppercase text-ui text-muted-foreground tracking-wide">© 2026 Bloom Studio. All rights reserved.</div>
+          <div className="uppercase text-ui text-muted-foreground tracking-wide">Paris, France</div>
         </div>
       </div>
     </footer>
