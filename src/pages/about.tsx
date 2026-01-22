@@ -1,5 +1,3 @@
-import { Link } from "react-router";
-
 const About = () => {
   return (
     <>
@@ -102,7 +100,7 @@ const About = () => {
       <section className="section-padding">
         <div className="studio-container">
           <div className="aspect-[21/9] overflow-hidden mb-10">
-            <img className="h-full w-full object-cover" src="src/assets/studio-space.jpg" alt="" />
+            <img className="h-full w-full object-cover" src="src/assets/studio-space.jpg" alt="studio-space" />
           </div>
           <div className="max-w-2xl space-y-4">
             <h3 className="text-title uppercase">A space designed for focus</h3>
