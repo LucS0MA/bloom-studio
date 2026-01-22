@@ -180,11 +180,11 @@
   }
 
   .studio-container {
-    @apply mx-auto w-full max-w-[1400px] px-6;
+    @apply mx-auto w-full max-w-[1400px] px-12;
   }
 
   .section-padding {
-    @apply py-24;
+    @apply py-32;
   }
 
   .text-h1 {

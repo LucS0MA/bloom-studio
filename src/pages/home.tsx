@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 const Home = () => {
   return (
     <>
+    {/** Hero section **/}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 image-parallax ">
           <img
@@ -29,6 +30,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/** Instructor section **/}
       <section className="section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center studio-container gap-24">
           <div>
@@ -55,6 +57,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/** Classes section **/}
       <section className="section-padding bg-foreground">
         <div className=" flex flex-col items-center gap-4 mb-16">
           <p className="text-lit-primary-foreground uppercase">our classes</p>
@@ -110,6 +113,7 @@ const Home = () => {
           </p>
         </div>
       </section>
+      {/** Philosohpy section **/}
       <section className="section-padding">
         <div className="studio-container flex flex-col items-center gap-6 justify-center">
           <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
@@ -123,6 +127,7 @@ const Home = () => {
           </p>
         </div>
       </section>
+      {/** OnlineStudio section **/}
       <section className="section-padding bg-foreground">
         <div className="studio-container grid  grid-cols-1 lg:grid-cols-2">
           <div className="flex flex-col gap-6">
@@ -173,6 +178,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/** Journey section **/}
       <section className="section-padding">
         <div className="studio-container flex flex-col gap-8 justify-center items-center text-center ">
         <h2 className="text-h2 uppercase">Ready to begin your journey?</h2>
