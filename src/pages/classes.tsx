@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { MousePointerClick } from "lucide-react";
 import { Link } from "react-router";
 
@@ -14,16 +15,17 @@ const Classes = () => {
             Every body is welcome.<br></br>
             Every journey is unique.
           </h1>
-          <p className="text-body text-lit-primary-foreground w-xl">
+          <p className="text-body text-lit-primary-foreground max-w-xl">
             Choose between our intimate group sessions or personalized private
             training. Each class is designed to challenge, inspire, and
             transform.
           </p>
         </div>
       </section>
+      {/** Collective classes section **/}
       <section className="section-padding">
         <div className="studio-container space-y-12">
-          <div className="w-2xl">
+          <div className="max-w-2xl">
             <p className="uppercase tracking-wide text-ui text-muted-foreground mb-4">
               Collective Classes
             </p>
@@ -97,10 +99,10 @@ const Classes = () => {
             </div>
           </div>
           <div className="border-t-2 flex justify-center">
-            <p className="text-ui uppercase tracking-wide mt-8">
+            <p className="text-ui uppercase tracking-wide mt-8 under-hover-b-classes">
               <Link
                 target="_blank"
-                className="under-hover-b flex gap-2 after:top-7"
+                className=" flex gap-2 after:top-7"
                 to={"https://www.mab-studio.fr/tarifs-et-abonnements/"}
               >
                 Classes details & prices on MabStudio website{" "}
@@ -109,29 +111,108 @@ const Classes = () => {
             </p>
           </div>
         </div>
+        {/** Location section **/}
       </section>
-        <div className="studio-container bg-foreground mb-20">
-          <div className="flex flex-col md:flex-row justify-between py-6">
-            <div className="w-full space-y-4">
-              <p className="tracking-wide uppercase text-ui text-lit-primary-foreground">
-                Location
-              </p>
-              <h3 className="text-title text-primary-foreground">MAB Studio</h3>
-              <p className="text-body text-lit-primary-foreground">
-                123 Rue de la Paix <br></br>75002 Paris, France
-              </p>
-            </div>
-            <div className="w-full space-y-4">
-              <p className="tracking-wide uppercase text-ui text-lit-primary-foreground">
-                Schedule
-              </p>
-              <p className="text-body text-lit-primary-foreground">
-                Monday - Friday: 7:00 - 20:00 <br></br>Saturday: 9:00 - 14:00
-                <br></br>Sunday: Closed
-              </p>
-            </div>
+      <div className="studio-container bg-foreground mb-20">
+        <div className="flex flex-col md:flex-row justify-between py-6">
+          <div className="w-full space-y-4">
+            <p className="tracking-wide uppercase text-ui text-lit-primary-foreground">
+              Location
+            </p>
+            <h3 className="text-title text-primary-foreground">MAB Studio</h3>
+            <p className="text-body text-lit-primary-foreground">
+              123 Rue de la Paix <br></br>75002 Paris, France
+            </p>
+          </div>
+          <div className="w-full space-y-4">
+            <p className="tracking-wide uppercase text-ui text-lit-primary-foreground">
+              Schedule
+            </p>
+            <p className="text-body text-lit-primary-foreground">
+              Monday - Friday: 7:00 - 20:00 <br></br>Saturday: 9:00 - 14:00
+              <br></br>Sunday: Closed
+            </p>
           </div>
         </div>
+      </div>
+      {/** Private session section **/}
+      <section className="section-padding  bg-foreground">
+        <div className="studio-container text-primary-foreground flex flex-col md:flex-row gap-24">
+          <div className="aspect-[4/3] overflow-hidden w-full">
+            <img
+              className="object-cover w-full h-full"
+              src="src/assets/private-studio.jpg"
+              alt="private-studio"
+            />
+          </div>
+          <div className=" w-full">
+            <h3 className="uppercase text-title mb-4">Reformer Pilates</h3>
+            <p className="text-body text-muted-foreground mb-4">
+              For those seeking a fully personalized experience, private
+              sessions offer the ultimate in bespoke Pilates training. Working
+              one-on-one in my personal studio, I design each session around
+              your specific goals, whether that's rehabilitation, athletic
+              performance, or simply deepening your practice.
+              <br />
+              <br />
+              Private sessions are ideal for those recovering from injury,
+              prenatal and postnatal clients, or anyone who prefers focused,
+              individual attention.
+            </p>
+            <div className="flex items-center justify-between border-t-1 border-lit-primary-foreground-d py-4">
+              <div>
+                <h3 className="uppercase text-lit-title">Single Session</h3>
+                <p className="text-ui uppercase text-muted-foreground tracking-wide">
+                  60 minutes
+                </p>
+              </div>
+              <div>
+                <h3 className="uppercase text-lit-title">€90</h3>
+              </div>
+            </div>
+            <div className="flex items-center justify-between border-t-1 border-lit-primary-foreground-d py-4">
+              <div>
+                <h3 className="uppercase text-lit-title">5-Session Package</h3>
+                <p className="text-ui uppercase text-muted-foreground tracking-wide">
+                  Save €50
+                </p>
+              </div>
+              <div>
+                <h3 className="uppercase text-lit-title">€400</h3>
+              </div>
+            </div>
+            <div className="flex items-center justify-between border-t-1 border-lit-primary-foreground-d py-4">
+              <div>
+                <h3 className="uppercase text-lit-title">10-Session Package</h3>
+                <p className="text-ui uppercase text-muted-foreground tracking-wide">
+                  Save €150
+                </p>
+              </div>
+              <div>
+                <h3 className="uppercase text-lit-title">€750</h3>
+              </div>
+            </div>
+            <Button
+              className="mt-4 hover:bg-lit-primary-foreground transition-all duration-300 cursor-pointer tracking-wide uppercase bg-primary-foreground text-foreground rounded-none px-8 py-6"
+              variant="outline"
+            >
+              Get in touch
+            </Button>
+          </div>
+        </div>
+      </section>
+      {/** Private session section **/}
+      <section className="section-padding">
+        <div className="studio-container">
+          <div className="overflow-hidden aspect-[9/4]">
+            <img
+              className="object-cover h-full w-full"
+              src="src/assets/studio-space.jpg"
+              alt="studio-space-classes"
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { Mail } from "lucide-react";
-import { SiInstagram } from '@icons-pack/react-simple-icons'
+import { SiInstagram, SiTiktok } from '@icons-pack/react-simple-icons'
 
 const Footer = () => {
   return (
@@ -40,12 +40,15 @@ const Footer = () => {
             <ul className="text-body text-muted-foreground-d flex flex-col gap-2 mt-4">
               <li>
                 <Link className="flex items-center gap-2" to={"/about"}>
-                  <Mail size={16} />
+                  <Mail strokeWidth={2.5} size={16} />
                   hello@bloomstudio.com
                 </Link>
               </li>
               <li>
                 <Link className="flex items-center gap-2" to={"/classes"}><SiInstagram size={16} />@bloomstudio</Link>
+              </li>
+              <li>
+                <Link className="flex items-center gap-2" to={"/classes"}><SiTiktok size={16} />@tikBloom</Link>
               </li>
             </ul>
           </div>

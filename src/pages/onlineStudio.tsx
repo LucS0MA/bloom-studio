@@ -1,21 +1,87 @@
+
+import { Spinner } from "@/components/ui/spinner"
+import { Link } from "react-router";
+
 const OnlineStudio = () => {
   return (
     <>
-      {/** Head section **/}
-      <section className="section-padding bg-foreground">
-        <div className="studio-container text-primary-foreground flex flex-col justify-start gap-5 py-12">
-          <p className="uppercase text-ui text-lit-primary-foreground tracking-wide">
-            Online Studio
-          </p>
-          <h1 className="uppercase text-h1">
-            Your practice,<br></br>
-            wherever you are
-          </h1>
-          <p className="text-body text-lit-primary-foreground w-xl">
-            Join live classes from anywhere in the world. Experience the same
-            quality instruction and personal attention as our in-studio
-            sessions.
-          </p>
+      {/** Hero Section **/}
+      <section className="section-padding bg-foreground min-h-screen flex items-center justify-center">
+        <div className="studio-container text-primary-foreground flex flex-col items-center justify-center gap-8 text-center">
+          <div className="animate-spin-slow">
+            <Spinner className='size-16' />
+          </div>
+          
+          <div className="space-y-6 max-w-3xl">
+            <p className="uppercase text-ui text-lit-primary-foreground tracking-wide">
+              Prochainement
+            </p>
+            
+            <h1 className="uppercase text-h1">
+              Quelque chose<br />
+              d'extraordinaire<br />
+              arrive bientôt
+            </h1>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 items-center mt-8">
+            <div className="text-center">
+              <p className="text-ui uppercase tracking-wide text-muted-foreground mb-2">
+                En attendant
+              </p>
+              <p className="text-body uppercase text-primary-foreground">
+                <Link to={'/classes'} className="under-hover-w">
+                Découvrez nos cours collectifs et privés
+                </Link>
+              </p>
+            </div>
+          </div>
+
+          {/** Decorative elements **/}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-foreground rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-foreground rounded-full blur-3xl"></div>
+          </div>
+        </div>
+      </section>
+
+      {/** Contact Section **/}
+      <section className="section-padding bg-background">
+        <div className="studio-container">
+          <div className="max-w-2xl mx-auto text-center space-y-8">
+            <div>
+              <p className="uppercase tracking-wide text-ui text-muted-foreground mb-4">
+                Restez informé
+              </p>
+              <h2 className="text-h2 uppercase mb-6">
+                Une question ?
+              </h2>
+              <p className="text-body text-muted-foreground">
+                N'hésitez pas à me contacter pour toute information. Je me ferais un plaisir de répondre à vos questions.
+              </p>
+            </div>
+
+            <div className="border-t-2 border-border pt-8 space-y-4">
+              <div className="flex flex-col md:flex-row justify-center gap-8">
+                <div className="text-center">
+                  <p className="text-ui uppercase tracking-wide text-muted-foreground mb-2">
+                    Email
+                  </p>
+                  <p className="text-body text-foreground">
+                    contact@mab-studio.fr
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-ui uppercase tracking-wide text-muted-foreground mb-2">
+                    Téléphone
+                  </p>
+                  <p className="text-body text-foreground">
+                    +33 1 23 45 67 89
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
