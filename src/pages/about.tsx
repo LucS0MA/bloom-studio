@@ -1,22 +1,38 @@
+import { useOnScreen } from "@/hooks/useOnScreen";
+
 const About = () => {
+  const [refNutshell, isVisibleNutshell] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];;
+  const [refCertifications, isVisibleCertifications] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];;
+  const [refStudio, isVisibleStudio] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];;
+
   return (
     <>
       {/** Head section **/}
       <section className="section-padding bg-foreground">
         <div className="studio-container text-primary-foreground flex flex-col gap-5 py-12">
-          <p className="uppercase text-ui text-lit-primary-foreground tracking-wide">
+          <p className="uppercase text-ui text-lit-primary-foreground tracking-wide fade-down fade-in">
             About
           </p>
-          <h1 className="uppercase text-h1">
+          <h1 className="uppercase text-h1 fade-up fade-in" style={{ animationDelay: '0.2s' }}>
             The woman behind<br></br>Bloom Studio
           </h1>
         </div>
       </section>
+
       {/** Instructor nutshell section **/}
-      <section className="section-padding">
+      <section ref={refNutshell} className="section-padding">
         <div className="studio-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-24">
-            <div className="flex flex-col justify-center">
+            <div className={`flex flex-col justify-center fade-right ${isVisibleNutshell ? "fade-in" : ""}`}>
               <h2 className="mb-6 text-title uppercase">In a nutshell</h2>
               <p className="mb-10 text-body text-muted-foreground-d">
                 My journey with Pilates began over fifteen years ago when I
@@ -36,9 +52,9 @@ const About = () => {
                 deeper awareness of how they move through life.
               </p>
             </div>
-            <div className="order-first aspect-[3/4] overflow-hidden">
+            <div className={`order-first lg:order-last aspect-[3/4] overflow-hidden fade-left ${isVisibleNutshell ? "fade-in" : ""}`} style={{ transitionDelay: '0.2s' }}>
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 src="src/assets/instructor-portrait.jpg"
                 alt="instructor"
               />
@@ -46,11 +62,12 @@ const About = () => {
           </div>
         </div>
       </section>
+
       {/** Certifications section **/}
-      <section className="section-padding bg-foreground">
+      <section ref={refCertifications} className="section-padding bg-foreground">
         <div className="studio-container">
           <div className="flex flex-col md:flex-row justify-center gap-24">
-            <div className="w-full">
+            <div className={`w-full fade-up ${isVisibleCertifications ? "fade-in" : ""}`}>
               <h3 className="text-title uppercase mb-4 text-primary-foreground">
                 Teaching philosophy
               </h3>
@@ -66,28 +83,28 @@ const About = () => {
                 want to be.
               </p>
             </div>
-            <div className="w-full">
+            <div className={`w-full fade-up ${isVisibleCertifications ? "fade-in" : ""}`} style={{ transitionDelay: '0.2s' }}>
               <h3 className="text-title uppercase mb-4 text-primary-foreground">
                 Certifications
               </h3>
               <ul className="text-body text-lit-primary-foreground space-y-4">
-                <li className="flex items-center gap-4">
+                <li className="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
                   <span className="rounded-full h-2 w-2 bg-white"></span>Pilates
-                  Method Alliance Certified Teacher/li /
+                  Method Alliance Certified Teacher
                 </li>
-                <li className="flex items-center gap-4">
+                <li className="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
                   <span className="rounded-full h-2 w-2 bg-white"></span>STOTT
                   Pilates® Reformer Certification
                 </li>
-                <li className="flex items-center gap-4">
+                <li className="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
                   <span className="rounded-full h-2 w-2 bg-white"></span>
                   Polestar Pilates Rehabilitation Specialist
                 </li>
-                <li className="flex items-center gap-4">
+                <li className="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
                   <span className="rounded-full h-2 w-2 bg-white"></span>Anatomy
                   in Motion Training
                 </li>
-                <li className="flex items-center gap-4">
+                <li className="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
                   <span className="rounded-full h-2 w-2 bg-white"></span>Pre &
                   Postnatal Pilates Certification
                 </li>
@@ -96,13 +113,18 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/** Certifications section **/}
-      <section className="section-padding">
+
+      {/** Studio space section **/}
+      <section ref={refStudio} className="section-padding">
         <div className="studio-container">
-          <div className="aspect-[21/9] overflow-hidden mb-10">
-            <img className="h-full w-full object-cover" src="src/assets/studio-space.jpg" alt="studio-space" />
+          <div className={`aspect-[21/9] overflow-hidden mb-10 fade-up ${isVisibleStudio ? "fade-in" : ""}`}>
+            <img 
+              className="h-full w-full object-cover hover:scale-105 transition-transform duration-1000" 
+              src="src/assets/studio-space.jpg" 
+              alt="studio-space" 
+            />
           </div>
-          <div className="max-w-2xl space-y-4">
+          <div className={`max-w-2xl space-y-4 fade-up ${isVisibleStudio ? "fade-in" : ""}`} style={{ transitionDelay: '0.2s' }}>
             <h3 className="text-title uppercase">A space designed for focus</h3>
             <p className="text-body text-muted-foreground-d">
               Bloom Studio is thoughtfully designed to create a calming

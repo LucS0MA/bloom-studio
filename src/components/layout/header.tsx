@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-500 ${isScrolled ? "bg-muted-foreground-m-d" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-500 ${isScrolled ? "bg-muted-foreground-m-d backdrop-blur-sm" : "bg-transparent"}`}
     >
       <div className="studio-container text-primary-foreground w-full max-w-7xl">
         <div className="h-24 flex justify-between items-center ">

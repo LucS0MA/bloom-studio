@@ -1,15 +1,33 @@
 import { Link } from "react-router";
 import { Infinity } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useOnScreen } from "@/hooks/useOnScreen";
 
 const Home = () => {
+    const [refHero, isVisibleHero] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];
+  const [refInstructor, isVisibleInstructor] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];
+  const [refOnline, isVisibleOnline] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];
+  const [refJourney, isVisibleJourney] = useOnScreen({ threshold: 0.3 }) as [
+    React.RefObject<HTMLElement>,
+    boolean,
+  ];
+
   return (
     <>
-    {/** Hero section **/}
-      <section className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0 image-parallax ">
+      {/** Hero section **/}
+      <section ref={refHero} className="relative h-screen overflow-hidden">
+        <div className={`absolute inset-0 image-parallax`}>
           <img
-            className=" w-full h-full object-cover scale-110"
+            className="w-full h-full object-cover scale-110"
             src="src\assets\hero-pilates.jpg"
             alt="hero-pilates"
           />
@@ -17,23 +35,27 @@ const Home = () => {
         <div className="absolute inset-0 bg-lit-subtle-foreground"></div>
         <div className="studio-container h-full pb-32 relative flex flex-col justify-end text-primary-foreground gap-5">
           <div className="max-w-2xl">
-            <div className="text-ui text-lit-primary-foreground mb-4 tracking-wide">
+            <div className={`text-ui text-lit-primary-foreground mb-4 tracking-wide fade-down ${isVisibleHero ? "fade-in" : ""}`}  style={{ animationDelay: '1s' }}>
               PILATES STUDIO • PARIS
             </div>
-            <h1 className="text-h1 mb-10 uppercase tracking-tight">
+            <h1 className={`text-h1 mb-10 uppercase tracking-tight fade-down ${isVisibleHero ? "fade-in" : ""}`} style={{ animationDelay: '0.8s' }}>
               Find your balance.<br></br> Bloom from within.
             </h1>
-            <p className="text-body text-lit-primary-foreground max-w-md">
+            <p className={`text-body text-lit-primary-foreground max-w-md fade-down ${isVisibleHero ? "fade-in" : ""}`} style={{ animationDelay: '0.6s' }}>
               A sanctuary for mindful movement, where every session is crafted
               to help you discover strength, flexibility, and inner peace.
             </p>
           </div>
         </div>
       </section>
+
       {/** Instructor section **/}
-      <section className="section-padding">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center studio-container gap-24">
-          <div>
+      <section
+        ref={refInstructor}
+        className={`section-padding`}
+      >
+        <div className={`grid grid-cols-1 lg:grid-cols-2 items-center studio-container gap-24`}>
+          <div className={`fade-up ${isVisibleInstructor ? "fade-in" : ""}`}>
             <p className="mb-6 text-ui uppercase text-subtle-foreground tracking-wide">
               About the Studio
             </p>
@@ -52,24 +74,25 @@ const Home = () => {
               </Link>
             </p>
           </div>
-          <div>
+          <div className={`fade-left ${isVisibleInstructor ? "fade-in" : ""}`} style={{ transitionDelay: '0.2s' }}>
             <img src="src/assets/instructor-portrait.jpg" alt="instructor" />
           </div>
         </div>
       </section>
+
       {/** Classes section **/}
       <section className="section-padding bg-foreground">
-        <div className=" flex flex-col items-center gap-4 mb-16">
+        <div className={`flex flex-col items-center gap-4 mb-16`}>
           <p className="text-lit-primary-foreground uppercase">our classes</p>
           <h2 className="text-h2 text-primary-foreground uppercase">
             find your practice
           </h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2  items-center studio-container gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center studio-container gap-24">
           <div>
             <div className="overflow-hidden aspect-[4/5] mb-6">
               <img
-                className="w-full h-full object-cover scale-110"
+                className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
                 src="src/assets/studio-space.jpg"
                 alt="instructor"
               />
@@ -88,7 +111,7 @@ const Home = () => {
           <div>
             <div className="overflow-hidden aspect-[4/5] mb-6">
               <img
-                className="w-full h-full object-cover scale-110"
+                className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
                 src="src/assets/one-in-one-pilate.jpg"
                 alt="instructor"
               />
@@ -105,32 +128,34 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className=" flex flex-col items-center justify-center my-16 ">
-          <p className="text-ui text-primary-foreground uppercase tracking-wide ">
+        <div className={`flex flex-col items-center justify-center my-16`}>
+          <p className="text-ui text-primary-foreground uppercase tracking-wide">
             <Link className="under-hover-w" to={"/classes"}>
               view all classes
             </Link>
           </p>
         </div>
       </section>
-      {/** Philosohpy section **/}
+
+      {/** Philosophy section **/}
       <section className="section-padding">
         <div className="studio-container flex flex-col items-center gap-6 justify-center">
-          <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
+          <p className="text-ui text-muted-foreground-d uppercase tracking-wide fade-down fade-in">
             philosophy
           </p>
-          <h3 className="uppercase text-title text-center">
+          <h3 className="uppercase text-title text-center fade-up fade-in" style={{ animationDelay: '0.2s' }}>
             "Physical fitness is the first requisite of happiness."
           </h3>
-          <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
+          <p className="text-ui text-muted-foreground-d uppercase tracking-wide fade-up fade-in" style={{ animationDelay: '0.4s' }}>
             — Joseph Pilates
           </p>
         </div>
       </section>
+
       {/** OnlineStudio section **/}
-      <section className="section-padding bg-foreground">
-        <div className="studio-container grid  grid-cols-1 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
+      <section ref={refOnline} className="section-padding bg-foreground">
+        <div className="studio-container grid grid-cols-1 lg:grid-cols-2">
+          <div className={`flex flex-col gap-6 fade-right ${isVisibleOnline ? "fade-in" : ""}`}>
             <p className="text-ui text-lit-primary-foreground uppercase tracking-wide">
               online studio
             </p>
@@ -148,46 +173,51 @@ const Home = () => {
               </Link>
             </p>
           </div>
-          <div className="flex items-center justify-center">
+          <div className={`flex items-center justify-center fade-left ${isVisibleOnline ? "fade-in" : ""}`} style={{ transitionDelay: '0.2s' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-4">
-              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-2">
+              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-2 hover:scale-105 transition-transform duration-300">
                 <h3 className="text-title">10+</h3>
                 <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
                   weekly classes
                 </p>
               </div>
-              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-2">
+              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-2 hover:scale-105 transition-transform duration-300">
                 <h3 className="text-title">500+</h3>
                 <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
                   happy students
                 </p>
               </div>
-              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-2">
+              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-2 hover:scale-105 transition-transform duration-300">
                 <h3 className="text-title">10+</h3>
                 <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
                   years of experience
                 </p>
               </div>
-              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-4">
+              <div className="bg-primary-foreground py-10 px-4 flex flex-col justify-center items-center gap-4 hover:scale-105 transition-transform duration-300">
                 <Infinity className="text-center" />
                 <p className="text-ui text-muted-foreground-d uppercase tracking-wide">
-                  weekly classes
+                  possibilities
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/** Journey section **/}
-      <section className="section-padding">
-        <div className="studio-container flex flex-col gap-8 justify-center items-center text-center ">
-        <h2 className="text-h2 uppercase">Ready to begin your journey?</h2>
-        <p className="max-w-6/12 text-body text-muted-foreground-dd">
-          Whether you're new to Pilates or looking to deepen your practice,
-          we're here to guide you every step of the way.
-        </p>
-        <Button className="hover:bg-muted-foreground-dark hover:text-primary-foreground transition-all duration-300 cursor-pointer
- tracking-wide uppercase bg-foreground text-primary-foreground rounded-none px-8 py-6" variant="outline">Get in touch</Button>
+      <section ref={refJourney} className="section-padding">
+        <div className={`studio-container flex flex-col gap-8 justify-center items-center text-center fade-up ${isVisibleJourney ? "fade-in" : ""}`}>
+          <h2 className="text-h2 uppercase">Ready to begin your journey?</h2>
+          <p className="max-w-6/12 text-body text-muted-foreground-dd">
+            Whether you're new to Pilates or looking to deepen your practice,
+            we're here to guide you every step of the way.
+          </p>
+          <Button
+            className="hover:bg-muted-foreground-dark hover:text-primary-foreground transition-all duration-300 cursor-pointer tracking-wide uppercase bg-foreground text-primary-foreground rounded-none px-8 py-6"
+            variant="outline"
+          >
+            Get in touch
+          </Button>
         </div>
       </section>
     </>

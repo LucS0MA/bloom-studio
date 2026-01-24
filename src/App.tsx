@@ -13,7 +13,6 @@ function App() {
   return (
     <ReactLenis root options={{ lerp: 0.1 }}>
       <ScrollToTop />
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
