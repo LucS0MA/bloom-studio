@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { useOnScreen } from "@/hooks/useOnScreen";
 import PageTransition from "@/components/ui/pageTransition";
 
+// Import images properly
+import heroPilates from "@/assets/hero-pilates.jpg";
+import instructorPortrait from "@/assets/instructor-portrait.jpg";
+import studioSpace from "@/assets/studio-space.jpg";
+import oneInOnePilate from "@/assets/one-in-one-pilate.jpg";
+
 const Home = () => {
   const [refHero, isVisibleHero] = useOnScreen({ threshold: 0.3 }) as [
     React.RefObject<HTMLElement>,
@@ -33,7 +39,7 @@ const Home = () => {
           <div className={`absolute inset-0 image-parallax`}>
             <img
               className="w-full h-full object-cover scale-110"
-              src="src\assets\hero-pilates.jpg"
+              src={heroPilates}
               alt="hero-pilates"
             />
           </div>
@@ -91,7 +97,7 @@ const Home = () => {
               className={`fade-left ${isVisibleInstructor ? "fade-in" : ""}`}
               style={{ transitionDelay: "0.2s" }}
             >
-              <img src="src/assets/instructor-portrait.jpg" alt="instructor" />
+              <img src={instructorPortrait} alt="instructor" />
             </div>
           </div>
         </section>
@@ -111,8 +117,8 @@ const Home = () => {
               >
                 <img
                   className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
-                  src="src/assets/studio-space.jpg"
-                  alt="instructor"
+                  src={studioSpace}
+                  alt="studio space"
                 />
               </div>
               <p className="text-lit-primary-foreground uppercase tracking-wide mb-2">
@@ -132,8 +138,8 @@ const Home = () => {
               >
                 <img
                   className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
-                  src="src/assets/one-in-one-pilate.jpg"
-                  alt="instructor"
+                  src={oneInOnePilate}
+                  alt="one on one pilates"
                 />
               </div>
               <p className="text-lit-primary-foreground uppercase tracking-wide mb-2">

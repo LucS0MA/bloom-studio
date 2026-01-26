@@ -4,6 +4,12 @@ import { Link } from "react-router";
 import { useOnScreen } from "@/hooks/useOnScreen";
 import PageTransition from "@/components/ui/pageTransition";
 
+// Import images properly
+import oneInOnePilate from "@/assets/one-in-one-pilate.jpg";
+import reformerDetail from "@/assets/reformer-detail.jpg";
+import privateStudio from "@/assets/private-studio.jpg";
+import studioSpace from "@/assets/studio-space.jpg";
+
 const Classes = () => {
   const [refCollective, isVisibleCollective] = useOnScreen({
     threshold: 0.1,
@@ -75,7 +81,7 @@ const Classes = () => {
                 <div className="aspect-[4/3] overflow-hidden mb-8">
                   <img
                     className="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
-                    src="src/assets/one-in-one-pilate.jpg"
+                    src={oneInOnePilate}
                     alt="one-in-one-pilate"
                   />
                 </div>
@@ -107,7 +113,7 @@ const Classes = () => {
                 <div className="aspect-[4/3] overflow-hidden w-full mb-8">
                   <img
                     className="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
-                    src="src/assets/reformer-detail.jpg"
+                    src={reformerDetail}
                     alt="reformer-detail"
                   />
                 </div>
@@ -185,7 +191,7 @@ const Classes = () => {
             >
               <img
                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                src="src/assets/private-studio.jpg"
+                src={privateStudio}
                 alt="private-studio"
               />
             </div>
@@ -261,7 +267,7 @@ const Classes = () => {
             >
               <img
                 className="object-cover h-full w-full hover:scale-105 transition-transform duration-1000"
-                src="src/assets/studio-space.jpg"
+                src={studioSpace}
                 alt="studio-space-classes"
               />
             </div>

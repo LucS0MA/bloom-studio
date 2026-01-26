@@ -1,6 +1,10 @@
 import PageTransition from "@/components/ui/pageTransition";
 import { useOnScreen } from "@/hooks/useOnScreen";
 
+// Import images properly
+import instructorPortrait from "@/assets/instructor-portrait.jpg";
+import studioSpace from "@/assets/studio-space.jpg";
+
 const About = () => {
   const [refNutshell, isVisibleNutshell] = useOnScreen({ threshold: 0.3 }) as [
     React.RefObject<HTMLElement>,
@@ -64,7 +68,7 @@ const About = () => {
               >
                 <img
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  src="src/assets/instructor-portrait.jpg"
+                  src={instructorPortrait}
                   alt="instructor"
                 />
               </div>
@@ -140,7 +144,7 @@ const About = () => {
             >
               <img
                 className="h-full w-full object-cover hover:scale-105 transition-transform duration-1000"
-                src="src/assets/studio-space.jpg"
+                src={studioSpace}
                 alt="studio-space"
               />
             </div>
