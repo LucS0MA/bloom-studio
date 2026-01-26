@@ -1,11 +1,11 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-const pageVariants = {
-  initial: { opacity: 1 },
-  animate: { opacity: 1 },
-  exit: { opacity: 1 },
-};
+// const pageVariants = {
+//   initial: { opacity: 1 },
+//   animate: { opacity: 1 },
+//   exit: { opacity: 1 },
+// };
 
 type Props = {
   children: React.ReactNode;
