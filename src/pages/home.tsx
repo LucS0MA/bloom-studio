@@ -110,13 +110,13 @@ const Home = () => {
               find your practice
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center studio-container gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-start studio-container gap-24">
             <div>
               <div
-                className={`overflow-hidden aspect-[4/5] mb-6 fade-right ${isVisibleClasses ? "fade-in" : ""}`}
+                className={`overflow-hidden aspect-[4/5] mb-6 `}
               >
                 <img
-                  className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
+                  className="w-full h-full object-cover hover:scale-100 transition-transform duration-700"
                   src={studioSpace}
                   alt="studio space"
                 />
@@ -134,10 +134,10 @@ const Home = () => {
             </div>
             <div>
               <div
-                className={`overflow-hidden aspect-[4/5] mb-6 fade-left ${isVisibleClasses ? "fade-in" : ""}`}
+                className={`overflow-hidden aspect-[4/5] mb-6 `}
               >
                 <img
-                  className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
+                  className="w-full h-full object-cover  hover:scale-100 transition-transform duration-700"
                   src={oneInOnePilate}
                   alt="one on one pilates"
                 />

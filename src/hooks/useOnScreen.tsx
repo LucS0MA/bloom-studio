@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+// useOnScreen.tsx - Version optimisée
+import { useEffect, useRef, useState, useMemo } from "react";
 
 export function useOnScreen(options = {}) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  
+  const memoizedOptions = useMemo(() => options, [JSON.stringify(options)]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -10,12 +13,15 @@ export function useOnScreen(options = {}) {
         setIsVisible(true);
         observer.disconnect();
       }
-    }, options);
+    }, memoizedOptions);
 
-    if (ref.current) observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) observer.observe(currentRef);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
+  }, [memoizedOptions]);
 
   return [ref, isVisible];
 }
